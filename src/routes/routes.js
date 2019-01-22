@@ -1,5 +1,5 @@
 import { Client } from 'pg';
-import knex from '../db/knex';
+import knex from '../../db/knex';
 
 export const getAll = async (req, res) => {
   const users = await knex.select().from('users');

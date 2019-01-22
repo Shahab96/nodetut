@@ -5,9 +5,11 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "npm run build && node ./src/index.js",
+    "prestart": "npm run build",
+    "start": "node ./build/index.js",
     "clean": "rimraf build/",
-    "build": "npm run clean && babel ./src --out-dir build/",
+    "prebuild": "npm run clean",
+    "build": "babel ./src --out-dir build/",
     "create_users": "knex migrate:make create_users_table"
   },
   "author": "",
